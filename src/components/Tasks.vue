@@ -1,7 +1,7 @@
 <template>
   <div v-for="task in tasks" :key="task.id">
     <h3>
-      <Task @delete-task="$emit('delete-task', task.id)" :task="task" />
+      <Task @toggle-reminder="$emit('toggle-reminder', task.id)" @delete-task="$emit('delete-task', task.id)" :task="task" />
     </h3>
   </div>
 </template>
@@ -17,6 +17,6 @@ export default {
   components: {
     Task
   },
-  emits: ['delete-task']
+  emits: ['delete-task', 'toggle-reminder']
 };
 </script>
